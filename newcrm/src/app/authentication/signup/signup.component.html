@@ -1,0 +1,87 @@
+<section>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg " 
+                  name="userName" formControlName="username" />
+                  <label class="form-label" for="form3Example1cg">User Name</label>
+                  <div class="form-text text-danger" *ngIf="username.errors?.['required'] && 
+                  username.touched">
+                    User Name is Required
+                  </div>
+                  <div class="form-text text-danger" *ngIf="username.errors?.['minlength']">
+                    User Name is too short
+                  </div>
+                  <div class="form-text text-danger" *ngIf="username.errors?.['pattern']">
+                    User Name should start with Alphabet
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg"
+                  name="email" formControlName="email"  />
+                  <label class="form-label" for="form3Example3cg">Your Email</label>
+                  <div class="form-text text-danger" *ngIf="email.errors?.['required'] && 
+                  email.touched">
+                    Email is Required
+                  </div>
+                  <div class="form-text text-danger" *ngIf="email.errors?.['email']">
+                    Email is Invalid
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" 
+                  name="password" formControlName="password"/>
+                  <label class="form-label" for="form3Example4cg">Password</label>
+                  <div class="form-text text-danger" *ngIf="password.errors?.['required'] && 
+                  password.touched">
+                    Password is Required
+                  </div>
+                  <div class="form-text text-danger" *ngIf="password.errors?.['minlength'] || password.errors?.['maxlength']
+                  && password.touched">
+                    Password should be at least 6 and  at the max 15 Characters long.
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" 
+                  name="comfirmpass" formControlName="comfirmpass" />
+                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                  <div class="form-text text-danger" [ngStyle]="{'display': comfirmpass1}">
+                    Repeat password is Invalid
+                  </div>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" [disabled]="signupForm.invalid">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a [routerLink]="['/authentication/login']"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

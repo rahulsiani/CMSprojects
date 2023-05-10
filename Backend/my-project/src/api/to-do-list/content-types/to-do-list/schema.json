@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "to_do_lists",
+  "info": {
+    "singularName": "to-do-list",
+    "pluralName": "to-do-lists",
+    "displayName": "toDoList"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    }
+  }
+}

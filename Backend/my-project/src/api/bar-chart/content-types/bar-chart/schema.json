@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bar_charts",
+  "info": {
+    "singularName": "bar-chart",
+    "pluralName": "bar-charts",
+    "displayName": "Bar Chart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "letter": {
+      "type": "string"
+    },
+    "frequency": {
+      "type": "decimal"
+    }
+  }
+}

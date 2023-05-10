@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "line_charts",
+  "info": {
+    "singularName": "line-chart",
+    "pluralName": "line-charts",
+    "displayName": "Line Chart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "value": {
+      "type": "decimal"
+    }
+  }
+}

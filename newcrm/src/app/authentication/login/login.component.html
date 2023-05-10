@@ -1,0 +1,41 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent" style="margin-top: 60px ;">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first" style="padding-top: 20px ;">
+            <h2>Login</h2>
+            <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+        id="icon" alt="User Icon" /> -->
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <input type="text" id="login" class="fadeIn second" name="login" formControlName="identifier"
+                placeholder="login">
+            <input type="password" id="password" class="fadeIn third" formControlName="password" name="login"
+                placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+
+            <div class="text-center pt-1 mb-5 pb-1">
+                <a class="text-muted" [routerLink]="['/authentication/changepassword']">Forgot password?</a>
+            </div>
+            <hr class="my1">
+            <div class="text-center">
+                <p>or login with:</p>
+                <cool-google-button color="light">
+                    Google
+                </cool-google-button>
+
+                <div class="d-flex align-items-center justify-content-center pb-4 pd1">
+                    <p class="mb-0 me-2">Don't have an account?</p>
+                    <button type="button" class="btn btn-outline-danger"
+                        [routerLink]="['/authentication/signup']">Create new</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row text-center" *ngIf="!loginsucces">
+    <!-- <mat-spinner></mat-spinner> -->
+</div>
